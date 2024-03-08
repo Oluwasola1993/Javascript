@@ -42,16 +42,16 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" class="form-control form-control-sm my-2" id="firstName"
+                        <input type="text" class="form-control form-control-sm my-2" id="firstname"
                             placeholder="First Name">
-                        <input type="text" class="form-control form-control-sm my-2" id="lastName"
+                        <input type="text" class="form-control form-control-sm my-2" id="lastname"
                             placeholder="Last Name">
-                        <input type="text" class="form-control form-control-sm my-2" id="mailPhone"
+                        <input type="text" class="form-control form-control-sm my-2" id="mailphone"
                             placeholder="Email/Phone Number">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="edit(i)">Save
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="edit(i+1)">Save
                             Changes</button>
                     </div>
                 </div>
@@ -90,15 +90,15 @@
             }
 
             function edit(i) {
-                let firstName = document.getElementById("firstName").value;
-                let lastName = document.getElementById("lastName").value;
-                let mailPhone = document.getElementById("mailPhone").value;
+                let fN = document.getElementById("firstname").value;
+                let lN = document.getElementById("lastname").value;
+                let email = document.getElementById("mailphone").value;
                 let newDetails = {
-                    firstName: firstName,
-                    lastName: lastName,
-                    email: mailPhone
+                    firstName: fN,
+                    lastName: lN,
+                    email: email,
                 }
-                newStudent.splice(i - 1, 1, [i].newFirstName, [i].newLastName, [i].newEmail)
+                newStudent.splice(i, 1, newDetails)
                 displayStudDEtails()
             }
         </script>
